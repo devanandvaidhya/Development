@@ -4,9 +4,9 @@
     width: 30%;
     margin-left: 36%;
     margin-top:5%;
-    color: white;
+    color: black;
     border-radius: 10px #095989;
-    background: #095989;
+    background: #bac6cd;
     opacity: 0.9;
     padding-left: 3%;
     padding-top: 1%;
@@ -27,7 +27,7 @@
 
 .login-wrap
 {
-    background: #095989;
+    background: #bac6cd;
     padding-left: 30px;
     padding-right: 30px;
     border-radius:5px;
@@ -50,4 +50,10 @@
     background-position: center center;
     background-size: cover;
     margin-bottom: 11px;
+}
+
+.error
+{
+    color: red;
+    border: 0.1px solid red;
 }

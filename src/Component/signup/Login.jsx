@@ -39,7 +39,8 @@ export function Login()
                             setstudcookies('UserName',response.data.entity.userName,[{expires:new Date('2024-12-31')}]);
                         if(response.data.entity.isAuthenticate)
                         {
-                            dispatch({type:IsLoggedIn, payload:true})
+                            localStorage.setItem('Users',JSON.stringify(response.data.entity)  );
+                             dispatch({type:IsLoggedIn, payload:true})
                             navigate('/dashboard');
                         }
 
@@ -79,7 +80,7 @@ export function Login()
                                     />
                                 </div>
                                 <div className="row form-group mt-5 d-md-flex">
-                                    <Button type='submit' variant="outlined" style={{background: 'skyblue'}}>Login</Button>
+                                    <Button type='submit' variant="outlined" style={{background: '#7598ad'}}>Login</Button>
                                     <div className="w-100 text-md-center">
                                         <Link to="/pwdchange">Forget Password</Link>
                                     </div>

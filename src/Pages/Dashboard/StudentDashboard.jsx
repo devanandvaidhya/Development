@@ -9,7 +9,7 @@ export function Dashboard()
         <>
         <h4>Welcome to Student Dashboard</h4>
         <div className=" dshbr-container">
-            <div className=''>
+            <div >
                 <div className="row">
                     <div className="col-md-6"><StudentCount/></div>
                     <div className="col-md-6"><StudentCount/></div>

@@ -4,18 +4,28 @@ import './Navbar.css'
 import { IconContext } from 'react-icons';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import * as IoIcons from 'react-icons/io';
 import { SidebarData } from './SidebarData';
 import { UserContext } from '../../App';
-import { IsLoggedIn } from '../../Constant/emp_constant';
+
+import { Avatar} from '@mui/material';
+import { deepOrange, deepPurple } from '@mui/material/colors';
+import { UserRoles } from '../../Constant/Roles';
+import { UserStatus } from '../../Constant/common';
+import { UserProfileMenu } from './UserProfileMenu';
 
 
 
-export function AuthNavbar()
+export function AuthNavbar({ManageWidth})
 {
-  const {state,dispatch} = useContext(UserContext);
+
     const [sidebar, setSidebar] = useState(false);
+    const [sideMenu, setsideMenu] = useState([]);
+    let Emp = JSON.parse(localStorage.getItem('Users'));
+
+    const AdminLink = ['Home','Dashboard','Products','Team','Messages','Support','ProductList','User List'];
+    const EmpLink = ['Home','Dashboard',,'Team','Messages','Support','ProductList'];
 
   let navigate = useNavigate();
 
@@ -23,14 +33,39 @@ export function AuthNavbar()
   {
     
     setSidebar(!sidebar);
+    ManageWidth(sidebar);
   }
 
-  function handleLogout()
+ 
+
+
+
+function getSideMenuLink()
+{
+  let filterLink =[{}];
+  if(Emp.roleName===UserRoles.ADMIN)
   {
-    dispatch({type:IsLoggedIn, payload:false});
-    navigate('/login');
+    filterLink = SidebarData.filter(item => AdminLink.indexOf(item.title) !== -1);
   }
+  else
+  {
+    filterLink = SidebarData.filter(item => EmpLink.indexOf(item.title) !== -1);
+    debugger;
+    if(Emp.statusName!=UserStatus.Approved)
+    {
+      filterLink = filterLink.filter((data)=> data.title != 'ProductList' )
+    }
 
+  }
+  setsideMenu(filterLink)
+}
+
+
+
+
+  useEffect(()=>{
+    getSideMenuLink();
+  },[])
     return(
         <>
         {/* <header className='nvbgcolr'>
@@ -58,7 +93,20 @@ export function AuthNavbar()
           </Link>
           </div>
           <div>
-            <button onClick={handleLogout} className='btn btn-info'>Logout</button>
+          <div className=" drp-user-logout" role="group">
+            <UserProfileMenu/>
+            {/* <button type="button" className="btn drp-bgcolr dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> */}
+            {/* <Avatar  sx={{ bgcolor: deepOrange[500] ,width: 24, height: 24 }}>DV</Avatar>   USER   */}
+            {/* USER
+            </button> */}
+            {/* <ul className="dropdown-menu drp-width">
+              <li><a className="dropdown-item" onClick={handleUserProfile}>User Profile</a></li>
+              <li><a className="dropdown-item" onClick={handleLogout} >Logout</a></li>
+            </ul> */}
+                
+          </div>
+
+            {/* <button onClick={handleLogout} className='btn btn-info'>Logout</button> */}
           </div>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
@@ -69,14 +117,18 @@ export function AuthNavbar()
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
-            {SidebarData.map((item, index) => {
+            {sideMenu.map((item, index) => {
               return (
+            
+            
                 <li key={index} className={item.cName}>
                   <Link to={item.path}>
                     {item.icon}
                     <span>{item.title}</span>
                   </Link>
                 </li>
+                
+             
               );
             })}
           </ul>

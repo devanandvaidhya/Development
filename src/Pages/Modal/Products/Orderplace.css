@@ -1,0 +1,39 @@
+.rotating-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Adjust height as needed */
+  }
+  
+  .rotating-image {
+    animation: rotate 501ms linear infinite; /* Animation for rotation */
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .modal-bg
+  {
+    background-color:var(--bs-body-bg) !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin-top: 0% !important;
+    align-items: normal !important;
+  }
+
+
+  .title
+  {
+    padding-top: 50% !important;
+  }
+  .img-rotate
+  {
+    margin-left: 57px !important;
+    margin-top: 100px !important;
+  }

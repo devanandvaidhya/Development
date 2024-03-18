@@ -11,6 +11,7 @@ export function Navbar()
                 <div className="row">
                     <div className="col-md-4">
                         Company Name
+                        <img src='/logo.jpeg'/>
                     </div>
                     <div className="col-md-8">
                         <ul className='menu'>

@@ -1,5 +1,139 @@
 .bgcolr
 {
-background: #216683;
+/* background: #a4b6bd !important; */
+width: 91% !important;
+margin-left: 5% !important;
 }
 
+.product-cls
+{
+    /* border: 0.1px solid white; */
+    /* width: 30% !important; */
+    /* margin-left: 36% !important; */
+    padding-bottom: 1px;
+    margin-top:5%;
+    color: white;
+    border-radius: 10px #095989;
+    background: #fbfeff;
+    opacity: 0.9;
+    /* padding-left: 20px  !important; */
+    padding-top: 1%;
+    height: auto;
+    box-shadow: 0px 2px 1px 3px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+.product-container
+{
+    /* border: 1px solid black; */
+    /* background: #ced7d6; */
+    height: auto;
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 3px rgba(0,0,0,0.12)
+}
+
+.like-star
+{
+    margin-bottom: 2rem;
+ 
+}
+
+.imgcls:hover {
+    transform: scale(1.5);
+    transition: 2s;
+}
+
+/* .add-feature
+{
+  
+} */
+
+.feature-container
+{
+    /* border: 0.1px solid darkseagreen; */
+    border-radius: 5px;
+    height: auto;
+    
+    
+}
+.bxsh
+{
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+.prod-add-to-cart-btn
+{
+    width: 50%;
+    border-radius: 15px;
+    /* border-radius: 15px 10px 10px 10px; */
+    background-color: #FFD814;
+    border: 0.1px solid #FFD814;
+    /* border-color: #FFD814; */
+}
+.prod-buy-btn
+{
+    width: 50%;
+    border-radius: 15px;
+    /* border-radius: 15px 10px 10px 10px; */
+    background-color: #FFA41C;
+    border: 0.1px solid #FFA41C;
+    /* border-color: #FFD814; */
+}
+
+.prod-back
+{
+    margin-right: 95%;
+    margin-top: 6px;
+}
+
+.bank-drp
+{
+    background: #f1f7f7 !important;
+    width: auto !important;
+    margin-left: 5% !important;
+}
+
+.feature-container-bank-dtls
+{
+    /* border: 0.1px solid darkseagreen; */
+    border-radius: 5px;
+    height: auto;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding:10px;
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+.btn-contr
+{
+  /* position: relative; */
+  display: flex;
+  /* justify-content: flex-end; */
+  justify-content: center;
+  align-items: center;
+  padding-top: 16px;
+
+}
+.btn-pos
+{
+  /* position: absolute;
+  right: 0; */
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #FFD814;
+  border: 0.1px solid #FFD814;
+  width: 50%;
+  border-radius: 15px;
+}
+
+.bank-display-none
+{
+    display: none;
+}
+
+.proc-btn
+{
+    border-radius: 10px;
+    background: #b1c8d5;
+    color: white;
+}

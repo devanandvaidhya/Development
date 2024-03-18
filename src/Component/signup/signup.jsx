@@ -23,14 +23,46 @@ export function Signup()
 
     const [showPassword, setShowPassword] = useState(false);
     const [showAlert, setshowAlert] = useState(false);
-    const handleClickShowPassword = () => setShowPassword((show) => !show);
+    const [errorcls, seterrorcls] = useState(false);
+    const [errors, setErrors] = useState({
+                                    FirstName : '',
+                                    LastName:'',
+                                    UserName:'',
+                                    Password:'',
+                                    EmailId:'',
+                                    DOB: ''
+                                })
 
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+    
 
     let navigate = useNavigate();
 
     function  handleMouseDownPassword(event) {
         event.preventDefault();
       };
+
+      function validate(Emp)
+      {
+        let IsValid =true;
+        const UpdateError = {...errors};
+debugger;
+        if(Emp.FirstName.trim()==='')
+        {
+            //UpdateError.FirstName='Please enter first name';
+            IsValid = false;
+            seterrorcls(true);
+        }
+        else
+        {
+            UpdateError.FirstName = '';
+        }
+
+        setErrors(UpdateError);
+        return IsValid;
+
+      }
     
       let formik = useFormik({
         initialValues:{
@@ -49,15 +81,19 @@ export function Signup()
         }
       })
 
-      function AddStudent(student)
+      function AddStudent(Emp)
       {
-        axios.post('http://localhost:11939/api/Student/SaveStudent',student).
-                then(response=>{
-                    //alert('Student added successfully..!');
-                    //setstudcookies('UserName');
-                    setshowAlert(true)
-                    navigate('/login');
-                })
+        if(validate(Emp))
+        {
+            axios.post('http://localhost:11939/api/Student/SaveStudent',Emp).
+            then(response=>{
+                //alert('Student added successfully..!');
+                //setstudcookies('UserName');
+                setshowAlert(true)
+                navigate('/login');
+            })
+        }
+      
             
                 
       }
@@ -81,7 +117,9 @@ export function Signup()
             <form onSubmit={formik.handleSubmit}>
                 
                 <div className="row mt-3">
-                <TextField sx={{m: 0.5, width: '25ch' }} name='FirstName' onChange={formik.handleChange} size='small' id="outlined-basic" label="First Name" variant="outlined" />
+                <TextField sx={{m: 0.5, width: '25ch' }} className={errorcls?'error':''} name='FirstName' onChange={formik.handleChange} size='small' id="outlined-basic" label="First Name" variant="outlined" />
+                {/* <div className="invalid-feedback">{errors.FirstName}</div> */}
+                {/* <span className="error">{errors.FirstName}</span> */}
                 </div>
                 <div className="row mt-3">
                 <TextField sx={{m: 0.5, width: '25ch' }} name='LastName' onChange={formik.handleChange} size='small' id="outlined-basic" label="Last Name" variant="outlined" />
@@ -94,7 +132,7 @@ export function Signup()
                 </div>
                 <div className="row mt-3">
                
-                    <OutlinedInput placeholder='Password' name="Password" onChange={formik.handleChange} id="outlined-adornment-password" size='small' sx={{m: 0.5, width: '25ch' }}  type={showPassword ? 'text' : 'password'}
+                    <OutlinedInput placeholder='Password' name="Password" onChange={formik.handleChange} id="outlined-adornment-password"  size='small' sx={{m: 0.5, width: '25ch' }}  type={showPassword ? 'text' : 'password'}
                     endAdornment={
                     <InputAdornment position="end" >
                         <IconButton aria-label="toggle password visibility" onClick={handleClickShowPassword}
@@ -115,7 +153,7 @@ export function Signup()
 
                 </div>
                 <div className="row mt-3 ">
-                <input type="date"  name="DOB" onChange={formik.handleChange} style={{background:'#095989', width:'93%'}} className="dob-cls  form-control"/>
+                <input type="date"  name="DOB" onChange={formik.handleChange} style={{background:'#bac6cd', width:'93%', border:'0.2px solid black'}} className="dob-cls  form-control"/>
                 
                 {/* <LocalizationProvider dateAdapter={AdapterDayjs} >
                     <DemoContainer components={['DatePicker']} >

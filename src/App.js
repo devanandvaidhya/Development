@@ -14,13 +14,21 @@ import { Product } from './Pages/Products/Product';
 import { Support } from './Pages/Support/Support';
 import { initialState, reducer } from './Reducer/useReducers';
 import { Navigation } from './Component/Navbar/Navigation';
+import { ProductList } from './Pages/Products/ProductList';
+import { UserProfile } from './Pages/Users/UserProfile';
+import { ProductDetails } from './Pages/Products/ProductDetails';
+import { AdminRole } from './Pages/Roles/AdminRole';
+import { EmpRole } from './Pages/Roles/EmpRole';
+import { Routers } from './Pages/Router/Routers';
+import { Provider } from 'react-redux';
+import store from './ReduxContiner/Store';
+import { CardProvider } from './Context/cardContext';
 
 export const UserContext  = createContext();
 
 function App() {
-    const[studecookies,setstudcookies,removestudcookies] = useCookies(['UserName']);
-    let IsLoggedIn =true;
-    
+
+    const [state, dispatch] = useReducer(reducer,initialState);
 
     useEffect(()=>{
         debugger;
@@ -33,61 +41,18 @@ function App() {
     },[])
 
 
-    const [state, dispatch] = useReducer(reducer,initialState);
+
 
   return (
+    // <Provider store={store}>
     <div className="App">
         <UserContext.Provider value={{state,dispatch}}>
-     <BrowserRouter>
-                <div>
-                  {/* {(IsLoggedIn==true)?<AuthNavbar/>:<Navbar/>}   */}
-                  <Navigation/>
-                </div>
-                <Routes>
-                    <Route
-                        exact
-                        path="/"
-                        element={<>Home Component</>}
-                    />
-                    <Route
-                        exact
-                        path="/gallary"
-                        element={<>Gallary Component</>}
-                    />
-                    <Route
-                        exact
-                        path="/about"
-                        element={<>About Compnent</>}
-                    />
-                    <Route
-                        exact
-                        path="/contact"
-                        element={<>Contact Compnent</>}
-                    />
-
-                    <Route
-                        exact
-                        path="/signup"
-                        element={<Signup/>}
-                    />
-                     <Route
-                        exact
-                        path="/login"
-                        element={<Login/>}
-                    />
-                     <Route
-                        exact
-                        path="/dashboard"
-                        element={<Dashboard/>}
-                    />
-                    <Route path="/pwdchange" element={<Passwordhome/>} />
-                    <Route path="/forgotpassword" element={<ForgotPassword/>} />
-                    <Route path="/products" element={<Product/>} />
-                    <Route path="/support" element={<Support/>} />
-                </Routes>
-            </BrowserRouter>
+        {/* <CardProvider> */}
+     <Routers/>
+     {/* </CardProvider> */}
      </UserContext.Provider>
     </div>
+    // </Provider>
   );
 }
 

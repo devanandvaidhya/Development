@@ -1,0 +1,57 @@
+.user-order-container
+{
+    /* border: 1px solid black;
+    background: #f7feff; */
+    height: auto;
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+.place-order
+{
+    display: flex;
+}
+
+.del-address
+{
+    height: auto;
+    width: 47%;
+    margin: 16px;
+    padding-left: 13px;
+    
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 3px rgba(0,0,0,0.12)
+
+}
+
+.order-details
+{
+    height: auto;
+    width: 54%;
+    margin: 16px;
+    padding-left: 13px;
+
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 3px rgba(0,0,0,0.12)
+
+}
+
+.content-box
+{
+    display: inline-flex;
+}
+.order-number
+{
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.img-thumnail
+{
+    height: 50px;
+    width: 50px;
+    display: block;
+}
+
+.prd-det
+{
+    display: flex;
+    justify-content: space-evenly;
+}

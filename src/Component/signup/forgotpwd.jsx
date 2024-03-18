@@ -61,7 +61,7 @@ export function ForgotPassword()
                               </div>
                               
                               <div className="row form-group mt-5 justify-content-center text-center">
-                                  <Button type='button' variant="outlined" className="w-50" onClick={handleCreatePassword} style={{background: 'skyblue'}}>Next</Button>
+                                  <Button type='button' variant="outlined" className="w-50" onClick={handleCreatePassword} style={{background: '#7598ad'}}>Next</Button>
                                  
                               </div>
                              

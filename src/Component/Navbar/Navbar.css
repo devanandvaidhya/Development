@@ -1,9 +1,9 @@
 .nvbgcolr
 {
-    background: #203a6c;
+    background: #a0afcd;
     /* height: 20px;
     width: 100%; */
-    color: white;
+    color: black;
 }
 
 .menu
@@ -21,17 +21,17 @@
 .menu li a
 {
     padding:15px 10px;
-    color: white;
+    color: black;
     display: block;
 }
 .menu li a:hover
 {
-    background-color: rgb(36, 5, 121);
+    background-color: rgb(144, 165, 194);
 }
 
 /* ------Auth Navbar------ */
 .navbar {
-    background-color: #252d5a;
+    background-color: #a0afcd;
     height: 80px;
     display: flex;
     justify-content: start;
@@ -45,8 +45,8 @@
   }
   
   .nav-menu {
-    background-color: #252d5a;
-    width: 250px;
+    background-color: #a0afcd;
+    width: 20%;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -83,7 +83,7 @@
   }
   
   .nav-text a:hover {
-    background-color: #1a83ff;
+    background-color: #8f9ebd;
   }
   
   .nav-menu-items {
@@ -91,7 +91,7 @@
   }
   
   .navbar-toggle {
-    background-color: #252d5a;
+    background-color: #a0afcd;
     width: 100%;
     height: 80px;
     display: flex;
@@ -101,4 +101,26 @@
   
   span {
     margin-left: 16px;
+  }
+
+  .drp-width
+  {
+    --bs-dropdown-min-width: 0rem !important;
+    background: #a0afcd !important;
+  }
+
+  .drp-bgcolr
+  {
+  background:#dde0e7 !important;
+  }
+
+  .drp-user-logout
+  {
+    /* width: 116px; */
+    /* margin-right: 44px; */
+    margin-right: 21px;
+  }
+  .card-item
+  {
+    margin-top: 10px;
   }

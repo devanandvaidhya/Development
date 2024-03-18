@@ -1,0 +1,22 @@
+.delete-icon-dis
+{
+    background-color: #dfd6d0 !important;
+    opacity: 1 !important;
+    cursor: not-allowed !important;
+    
+
+}
+
+.approve-icon-dis
+{
+    background-color: #8aa99d !important;
+    opacity: 1 !important;
+    cursor: not-allowed;
+}
+
+.reject-icon-dis
+{
+    background-color: #dfd6d0 !important;
+    opacity: 1 !important;
+    cursor: not-allowed;
+}

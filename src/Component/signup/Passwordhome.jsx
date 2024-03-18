@@ -86,7 +86,7 @@ export function Passwordhome()
                               </div>
                               
                               <div className="row form-group mt-5 justify-content-center text-center">
-                                  <Button type='button' variant="outlined" className="w-50" onClick={handleFogotpwd} style={{background: 'skyblue'}}>Next</Button>
+                                  <Button type='button' variant="outlined" className="w-50" onClick={handleFogotpwd} style={{background: '#7598ad'}}>Next</Button>
                                  
                               </div>
                              

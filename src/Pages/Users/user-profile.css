@@ -1,0 +1,79 @@
+
+.user-profile
+{
+    border: 0.2px solid black;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    margin-top: 3%;
+}
+
+.user-profile-logo
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 11px;
+    margin-top: 15%;
+}
+
+.left-user-profile
+{
+    /* width: 60%; */
+    height: 80vh;
+    border: 0.2px solid lightblue;
+}
+.right-user-profile
+{
+    width: 100%;
+    height: 80vh;
+    border: 0.2px solid lightblue;
+}
+
+.photo-container
+{
+    width: 70%;
+    height: 10rem;
+    margin-left: 2%;
+    margin-top: 2%;
+    padding: 2%;
+    border: 0.2px solid lightblue;
+}
+
+.file-prfl-upld
+{
+    margin-left: 96%;
+}
+
+.is-requested{ 
+    pointer-events: none; 
+    background-color: #edf1f2;
+  }
+.delete-icon
+{
+    color: #e75353 !important;
+}
+.approve-icon
+{
+    color: green !important;
+}
+.reject-icon
+{
+    color: #e55656 !important;
+}
+
+.tbl-bg-clr
+{
+    --bs-table-bg: #f6fdff !important;
+}
+
+.user-container
+{
+    border-radius: 8px;
+    height: auto;
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 3px rgba(0,0,0,0.12);
+}

@@ -32,8 +32,9 @@
 body
 {
  /* background-image: url(../public/assets/Images/Banner.jpg) no-repeat 0 0; */
- background-image: url(../public/assets/Images/banner.png);
- /* background: #b6ccd9 !important; */
+ /* background-image: url(../public/assets/Images/banner.png); */
+ /* background-image: url(../public/assets/Images/background.jpg); */
+ background: var(--bs-body-bg) !important;
 }
 
 @keyframes App-logo-spin {
